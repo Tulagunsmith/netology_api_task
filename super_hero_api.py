@@ -12,7 +12,7 @@ class SuperHero:
         if response.status_code == 200:
             return response.json()
         else:
-            print("There's no hope as there's no Super Heroes left.")
+            print("There's no hope as there aren't any Super Heroes left.")
 
     def _get_superhero_id(self):
         super_heroes = self._get_super_hero_list()
