@@ -21,5 +21,10 @@ class SuperHero:
             if name == items['name']:
                 return items['id']
 
-
+    def _get_superhero_intelligence(self):
+        super_hero_id = self._get_superhero_id('Hulk')
+        self.url = f'https://akabab.github.io/superhero-api/api/powerstats/{super_hero_id}.json'
+        response = requests.get(url=self.url, headers=self.headers)
+        response = response.json()
+        return response['intelligence']
 
