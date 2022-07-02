@@ -1,0 +1,17 @@
+import requests
+from pprint import pprint
+
+
+class SuperHero:
+    def __init__(self):
+        self.url = 'https://akabab.github.io/superhero-api/api/all.json'
+        self.headers = {'Content-Type': 'application/json'}
+
+    def get_super_hero_list(self):
+        response = requests.get(url=self.url, headers=self.headers)
+        if response.status_code == 200:
+            pprint(response.json())
+        else:
+            print("There's no hope as there's no Super Hero left.")
+
+
